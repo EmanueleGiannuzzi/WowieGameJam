@@ -4,16 +4,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class SignalWire : SignalReceiver {
-    SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     public bool isActive = false;
     public WireType wireType = WireType.DOUBLE;
-    public int rotation = 0; 
 
-    public Sprite[] doubleSprite = new Sprite[2];
-    public Sprite[] tripleSprite = new Sprite[2];
-    public Sprite[] quadrupleSprite = new Sprite[2];
-    public Sprite[] cornerSprite = new Sprite[2];
+    public Sprite doubleSprite;
+    public Sprite tripleSprite;
+    public Sprite quadrupleSprite;
+    public Sprite cornerSprite;
 
     public enum WireType {
         DOUBLE,
@@ -26,35 +25,33 @@ public class SignalWire : SignalReceiver {
         canInteract = false;
     }
 
-    private void Start() {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
-
     public override void OnSignalReceived(bool active) {
-        
+        isActive = active;
+        spriteRenderer.color = isActive ? Color.green : Color.red;
     }
 
     protected override void OnInteract() {}
 
     private void OnValidate() {
-        Sprite[] spriteArray = null;
+        Sprite sprite = null;
         switch(wireType) {
             case WireType.DOUBLE:
-                spriteArray = doubleSprite;
+                sprite = doubleSprite;
                 break;
             case WireType.TRIPLE:
-                spriteArray = tripleSprite;
+                sprite = tripleSprite;
                 break;
             case WireType.QUADRUPLE:
-                spriteArray = quadrupleSprite;
+                sprite = quadrupleSprite;
                 break;
             case WireType.CORNER:
-                spriteArray = cornerSprite;
+                sprite = cornerSprite;
                 break;
         }
 
-        spriteRenderer.sprite = spriteArray[isActive ? 1 : 0];
+        spriteRenderer.sprite = sprite;
+        spriteRenderer.color = isActive ? Color.green : Color.red;
 
-        this.transform.Rotate(Vector3.forward, rotation);
+        //this.transform.Rotate(Vector3.forward, rotation);
     }
 }

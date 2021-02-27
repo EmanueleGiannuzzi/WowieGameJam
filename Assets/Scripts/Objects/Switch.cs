@@ -40,9 +40,11 @@ public class Switch : Interactable {
     }
 
     private void OnDrawGizmos() {
-        Gizmos.color = active ? Color.green : Color.red;
+        Gizmos.color = active ? Color.green : Color.blue;
         foreach(SignalReceiver receiver in signalReceivers) {
-            Gizmos.DrawLine(this.transform.position, receiver.transform.position);
+            if(receiver != null) {
+                Gizmos.DrawLine(this.transform.position, receiver.transform.position);
+            }
         }
     }
 }

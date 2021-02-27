@@ -93,7 +93,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -114,3 +114,4 @@ MonoBehaviour:
   active: 0
   enabledSprite: {fileID: 21300000, guid: dcc2daed0e9e55848b4bb1056fb917a3, type: 3}
   disabledSprite: {fileID: 21300000, guid: e748ce5cb1db14b4ab2c983aaf2e2aac, type: 3}
+  signalReceivers: []

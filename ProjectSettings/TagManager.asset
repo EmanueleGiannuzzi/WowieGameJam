@@ -50,3 +50,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3350804171
     locked: 0
+  - name: SignalWires
+    uniqueID: 49047073
+    locked: 0
+  - name: Ghost
+    uniqueID: 3800432853
+    locked: 0

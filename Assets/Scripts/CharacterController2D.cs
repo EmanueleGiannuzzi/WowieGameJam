@@ -55,8 +55,34 @@ public class CharacterController2D : MonoBehaviour {
 		}
 	}
 
+    public void Move(float moveHoriz, float moveVert) {
+        // Enable the collider when not crouching
+        if(m_CrouchDisableCollider != null)
+            m_CrouchDisableCollider.enabled = true;
 
-	public void Move(float move, bool crouch, bool jump) {
+        if(m_wasCrouching) {
+            m_wasCrouching = false;
+            OnCrouchEvent.Invoke(false);
+        }
+
+        // Move the character by finding the target velocity
+        Vector3 targetVelocity = new Vector2(moveHoriz * 10f, moveVert * 10f);
+        // And then smoothing it out and applying it to the character
+        m_Rigidbody2D.velocity = Vector3.SmoothDamp(m_Rigidbody2D.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+
+		// If the input is moving the player right and the player is facing left...
+		if(moveHoriz > 0 && !m_FacingRight) {
+            // ... flip the player.
+            Flip();
+        }
+        // Otherwise if the input is moving the player left and the player is facing right...
+        else if(moveHoriz < 0 && m_FacingRight) {
+            // ... flip the player.
+            Flip();
+        }
+    }
+
+    public void Move(float move, bool crouch, bool jump) {
 		// If crouching, check to see if the character can stand up
 		if(!crouch) {
 			// If the character has a ceiling preventing them from standing up, keep them crouching
