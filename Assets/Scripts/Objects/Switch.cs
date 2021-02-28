@@ -17,6 +17,7 @@ public class Switch : Interactable {
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        SetActive(active);
     }
 
     private void FixedUpdate() {

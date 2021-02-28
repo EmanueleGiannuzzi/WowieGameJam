@@ -15,7 +15,7 @@ public class Spike : DeadlyOnContact {
     public override void OnSignalReceived(bool active) {
         base.OnSignalReceived(active);
 
-        spriteRenderer.color = active ? Color.green : Color.red;
+        //spriteRenderer.color = active ? Color.green : Color.red;
 
         Vector3 scale = this.transform.localScale;
         Vector3 position = this.transform.position;

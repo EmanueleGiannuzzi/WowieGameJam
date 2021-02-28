@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Collider2D))]
+//[RequireComponent(typeof(Collider2D))]
 public abstract class Interactable : MonoBehaviour {
     protected bool canInteract = true;
 
