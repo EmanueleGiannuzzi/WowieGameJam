@@ -9,11 +9,18 @@ public class Spike : CallOnContact {
     AudioSource audioSource;
 
     bool isAnimating = false;
+    float startYPos;
+    const float TRANSLATION = 0.375f;
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
         OnSignalReceived(isActive);
+
+        startYPos = transform.position.y;
+
+        LeanTween.moveLocalY(this.gameObject, startYPos - TRANSLATION, 0f);
+        LeanTween.scaleY(this.gameObject, 0.25126f, 0f);
     }
 
     public override void OnSignalReceived(bool active) {
@@ -39,20 +46,19 @@ public class Spike : CallOnContact {
 
             float duration = audioSource.clip.length;
 
+
             LeanTween.delayedCall(this.gameObject, 0.1f, () => {
-                LeanTween.scaleY(this.gameObject, 1f, duration * 0.5f);
-                LeanTween.moveLocalY(this.gameObject, 0.5f, duration * 0.5f);
+                LeanTween.scaleY(this.gameObject, 1f, duration * 0.25f);
+                LeanTween.moveY(this.gameObject, startYPos, duration * 0.25f);
 
                 LeanTween.delayedCall(this.gameObject, 2f, () => {
-                    LeanTween.moveLocalY(this.gameObject, 0.125f, 0.35f);
+                    LeanTween.moveLocalY(this.gameObject, startYPos - TRANSLATION, 0.35f);
                     LeanTween.scaleY(this.gameObject, 0.25126f, 0.35f)
                         .setOnComplete(() => {
                             isAnimating = false;
                         });
                 });
             });
-
-            //PlayerManager.Instance.Die();
 
             LeanTween.delayedCall(this.gameObject, duration * 0.75f, () => PlayerManager.Instance.Die());
         }

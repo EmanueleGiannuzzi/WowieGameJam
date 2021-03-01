@@ -22,6 +22,15 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         AudioSource = GetComponent<AudioSource>();
+
+        Physics2D.IgnoreLayerCollision(12, 0, true);
+        Physics2D.IgnoreLayerCollision(12, 1, true);
+        Physics2D.IgnoreLayerCollision(12, 2, true);
+        Physics2D.IgnoreLayerCollision(12, 4, true);
+        Physics2D.IgnoreLayerCollision(12, 5, true);
+        Physics2D.IgnoreLayerCollision(12, 8, true);
+        Physics2D.IgnoreLayerCollision(12, 9, true);
+        Physics2D.IgnoreLayerCollision(12, 10, true);
     }
 
     public static void ResetSwitches() {

@@ -16,8 +16,8 @@ TagManager:
   - Player
   - PostProcessing
   - Objects
-  - 
-  - 
+  - Border
+  - GhostCollider
   - 
   - 
   - 

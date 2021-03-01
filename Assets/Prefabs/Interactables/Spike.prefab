@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2443585881996546481}
   - component: {fileID: 7460787043756249981}
-  - component: {fileID: 9006756865452214900}
   - component: {fileID: -3472742789541244356}
+  - component: {fileID: 9006756865452214900}
   - component: {fileID: 6335929031687437339}
   m_Layer: 0
   m_Name: Spike
@@ -84,6 +84,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 1
   m_SpriteSortPoint: 0
+--- !u!114 &-3472742789541244356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3016992978806366943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ab2f091113a754cad00f0e88f285e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActive: 0
 --- !u!58 &9006756865452214900
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -100,18 +113,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &-3472742789541244356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3016992978806366943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ab2f091113a754cad00f0e88f285e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &6335929031687437339
 AudioSource:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b524b7d8ce820544d8ee1e36258b7491, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

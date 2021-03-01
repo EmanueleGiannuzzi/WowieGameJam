@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class CallOnContact : SignalReceiver {
-    protected bool isActive = false;
+    [SerializeField] protected bool isActive = false;
 
     public override void OnSignalReceived(bool active) {
         isActive = active;

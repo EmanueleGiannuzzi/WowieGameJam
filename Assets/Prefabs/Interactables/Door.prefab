@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorState: 0
-  lockedSprite: {fileID: 0}
-  unlockedSprite: {fileID: 0}
-  openSprite: {fileID: 0}
+  lockedSprite: {fileID: 21300000, guid: f7dde7630e814dd4ca799c596cfab6ce, type: 3}
+  unlockedSprite: {fileID: 21300000, guid: 69e59cf591ef0f64c98a4bf77345f5e3, type: 3}
+  openSprite: {fileID: 21300000, guid: e6877c1ee37a0094883eb5fe103607cf, type: 3}
 --- !u!58 &-4848044758024354328
 CircleCollider2D:
   m_ObjectHideFlags: 0

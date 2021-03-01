@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerManager : MonoBehaviour {
@@ -14,6 +15,10 @@ public class PlayerManager : MonoBehaviour {
 
     [Header("PostProcess")]
     public PostProcessVolume ghostVolume;
+
+    [Header("Events")]
+    public UnityEvent DieEvent;
+    public UnityEvent RespawnEvent;
 
     private float spriteMaskScale = 125f;
     private SpriteMask spriteMask;
@@ -89,6 +94,8 @@ public class PlayerManager : MonoBehaviour {
                 Player.GetComponent<SpriteRenderer>().color = Color.white;
                 Player.SetActive(false);
             }).setEaseOutCirc();
+
+            DieEvent.Invoke();
         }
     }
 
@@ -136,6 +143,8 @@ public class PlayerManager : MonoBehaviour {
                 Ghost.GetComponent<SpriteRenderer>().color = Color.white;
                 Ghost.SetActive(false);
             }).setEaseOutCirc();
+
+            RespawnEvent.Invoke();
         }
     }
 }

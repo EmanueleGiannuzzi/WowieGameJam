@@ -60,7 +60,7 @@ public class FakeTile : SignalReceiver {
     }
 
     private void UpdateState(bool active, bool propagate) {
-        isActive = active;
+        isActive = !active;
         this.GetComponent<Collider2D>().isTrigger = !isActive;
         this.gameObject.layer = isActive ? 0 : 10;
         if(ShoudlHideOnActive()) {

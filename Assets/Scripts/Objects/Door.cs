@@ -26,13 +26,15 @@ public class Door : SignalReceiver {
     }
 
     protected override void OnInteract() {
-        if(doorState == DoorState.UNLOCKED) {
-            SetState(DoorState.OPEN);
-            audioSource.Play();
-        }
-        else if(doorState == DoorState.OPEN) {
-            //TODO: Next level
-            Debug.Log("NEXT LEVEL!");
+        if(PlayerManager.Instance.IsAlive) {
+            if(doorState == DoorState.UNLOCKED) {
+                SetState(DoorState.OPEN);
+                audioSource.Play();
+            }
+            else if(doorState == DoorState.OPEN) {
+                //TODO: Next level
+                Debug.Log("NEXT LEVEL!");
+            }
         }
     }
 
