@@ -26,8 +26,20 @@ public class SignalWire : SignalReceiver {
     }
 
     public override void OnSignalReceived(bool active) {
+        UpdateState(active, true);
+    }
+
+    private void UpdateState(bool active, bool propagate) {
         isActive = active;
         spriteRenderer.color = isActive ? Color.green : Color.red;
+
+        if(propagate) {
+            foreach(SignalWire brother in this.transform.parent.GetComponentsInChildren<SignalWire>()) {
+                if(brother != this) {
+                    brother.UpdateState(active, false);
+                }
+            }
+        }
     }
 
     protected override void OnInteract() {}

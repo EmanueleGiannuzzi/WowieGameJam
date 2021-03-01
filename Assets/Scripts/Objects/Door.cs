@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Door : SignalReceiver {
     SpriteRenderer spriteRenderer;
+    AudioSource audioSource;
 
     [SerializeField]
     private DoorState doorState;
@@ -21,11 +22,13 @@ public class Door : SignalReceiver {
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     protected override void OnInteract() {
         if(doorState == DoorState.UNLOCKED) {
             SetState(DoorState.OPEN);
+            audioSource.Play();
         }
         else if(doorState == DoorState.OPEN) {
             //TODO: Next level

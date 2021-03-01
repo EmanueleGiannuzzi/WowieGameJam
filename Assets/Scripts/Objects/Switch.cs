@@ -14,10 +14,17 @@ public class Switch : Interactable {
 
     SpriteRenderer spriteRenderer;
     bool lastActive = false;
+    private bool defaultValue;
+
+    [Header("Audio")]
+    public AudioClip switchON;
+    public AudioClip switchOFF;
+
 
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         SetActive(active);
+        defaultValue = active;
     }
 
     private void FixedUpdate() {
@@ -38,6 +45,7 @@ public class Switch : Interactable {
 
     protected override void OnInteract() {
         SetActive(!active);
+        GameManager.Instance.AudioSource.PlayOneShot(active ? switchON : switchOFF);
     }
 
     private void OnDrawGizmos() {
@@ -47,5 +55,9 @@ public class Switch : Interactable {
                 Gizmos.DrawLine(this.transform.position, receiver.transform.position);
             }
         }
+    }
+
+    public void ResetValue() {
+        SetActive(defaultValue);
     }
 }

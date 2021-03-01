@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeadlyOnContact : SignalReceiver {
+public abstract class CallOnContact : SignalReceiver {
     protected bool isActive = false;
 
     public override void OnSignalReceived(bool active) {
@@ -13,7 +13,9 @@ public class DeadlyOnContact : SignalReceiver {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(isActive && collision.CompareTag("Player")) {
-            PlayerManager.Instance.Die();
+            OnContact();
         }
     }
+
+    protected abstract void OnContact();
 }

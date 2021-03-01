@@ -115,3 +115,5 @@ MonoBehaviour:
   enabledSprite: {fileID: 21300000, guid: dcc2daed0e9e55848b4bb1056fb917a3, type: 3}
   disabledSprite: {fileID: 21300000, guid: e748ce5cb1db14b4ab2c983aaf2e2aac, type: 3}
   signalReceivers: []
+  switchON: {fileID: 8300000, guid: 80ec4eba4d23305409a82710c1e5b628, type: 3}
+  switchOFF: {fileID: 8300000, guid: 48c149796b3c69d47ab5ffd4ed1f8c69, type: 3}
