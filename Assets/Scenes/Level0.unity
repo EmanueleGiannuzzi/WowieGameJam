@@ -10942,7 +10942,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Hug your body to Respawn
           m_BoolArgument: 0
         m_CallState: 2
   RespawnEvent:
@@ -29596,7 +29596,7 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 23
+    m_Bits: 2071
   m_GroundCheck: {fileID: 299414307}
   m_CeilingCheck: {fileID: 2034913020}
   m_CrouchDisableCollider: {fileID: 0}
@@ -35931,8 +35931,14 @@ PrefabInstance:
     - target: {fileID: -6609025227539608352, guid: 599addb9b3e35664fa83d9b8e07bbc39,
         type: 3}
       propertyPath: active
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2862405559074244705, guid: 599addb9b3e35664fa83d9b8e07bbc39,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e748ce5cb1db14b4ab2c983aaf2e2aac,
+        type: 3}
     - target: {fileID: 8116212962529714724, guid: 599addb9b3e35664fa83d9b8e07bbc39,
         type: 3}
       propertyPath: m_Name

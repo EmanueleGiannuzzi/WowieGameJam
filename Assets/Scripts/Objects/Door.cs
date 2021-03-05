@@ -1,14 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Door : SignalReceiver {
     SpriteRenderer spriteRenderer;
     AudioSource audioSource;
 
-    [SerializeField]
-    private DoorState doorState;
+    [SerializeField] private DoorState doorState;
+    //[SerializeField] private string nextSceneName;
 
     public Sprite lockedSprite;
     public Sprite unlockedSprite;
@@ -32,8 +33,7 @@ public class Door : SignalReceiver {
                 audioSource.Play();
             }
             else if(doorState == DoorState.OPEN) {
-                //TODO: Next level
-                Debug.Log("NEXT LEVEL!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

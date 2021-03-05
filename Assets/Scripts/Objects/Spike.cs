@@ -15,18 +15,18 @@ public class Spike : CallOnContact {
     private void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
-        OnSignalReceived(isActive);
+        OnSignalReceived(!isActive);
 
         startYPos = transform.position.y;
-
+        //LeanTween.moveLocal(this.gameObject, this.transform.up)
         LeanTween.moveLocalY(this.gameObject, startYPos - TRANSLATION, 0f);
         LeanTween.scaleY(this.gameObject, 0.25126f, 0f);
     }
 
     public override void OnSignalReceived(bool active) {
-        base.OnSignalReceived(active);
+        base.OnSignalReceived(!active);
 
-        spriteRenderer.color = active ? Color.green : Color.red;
+        spriteRenderer.color = isActive ? Color.red : Color.green;
 
         Vector3 scale = this.transform.localScale;
         Vector3 position = this.transform.position;

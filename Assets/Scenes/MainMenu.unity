@@ -710,7 +710,7 @@ Animator:
   m_GameObject: {fileID: 802053467}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: af4159a5a5e3ac44a870e80b3b993f35, type: 2}
+  m_Controller: {fileID: 9100000, guid: 13073eb9b0f877642b34842d52353f39, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -967,7 +967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1385542394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -980,7 +980,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1719663191}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1000,14 +1000,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.47843137, g: 0.48235294, b: 0.6431373, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 5171ff5de79b4db499e8187c24132e2e, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1452,8 +1452,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1940633545500802503}
   - {fileID: 1385542394}
+  - {fileID: 1940633545500802503}
   - {fileID: 1765993855}
   - {fileID: 1566477567}
   - {fileID: 438131966}
@@ -1762,12 +1762,12 @@ RectTransform:
   - {fileID: 1940633545500793337}
   - {fileID: 1940633545500800687}
   m_Father: {fileID: 1719663191}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.8, y: -183.8}
-  m_SizeDelta: {x: 180, y: 20}
+  m_AnchoredPosition: {x: 149.99998, y: -181}
+  m_SizeDelta: {x: 299.9999, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1940633545500840495
 RectTransform:

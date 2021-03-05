@@ -2168,6 +2168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 400
+  m_AirborneSpeedMultiplier: 10
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -7114,11 +7115,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1735314955143588619, guid: 363dd84f7d9bade419a236480076aee6,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1735314955143588619, guid: 363dd84f7d9bade419a236480076aee6,
-        type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
@@ -10873,6 +10869,12 @@ MonoBehaviour:
   Ghost: {fileID: 350433789}
   RespawnPoint: {fileID: 142023459}
   ghostVolume: {fileID: 779823617}
+  DieEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  RespawnEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!82 &1414221221
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15894,6 +15896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 700
+  m_AirborneSpeedMultiplier: 10
   m_CrouchSpeed: 0.36
   m_MovementSmoothing: 0.05
   m_AirControl: 1
